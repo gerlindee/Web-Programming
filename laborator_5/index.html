@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Laborator 5 - JQuery </title>
+
+	<style type="text/css">
+		.no_points {
+			display: flex;
+			align-items: center;
+		}
+
+		.no_points p {
+			padding-right: 5px;
+			padding-left: 5px;
+		}
+
+		.game_space {
+			/*position: relative;*/
+		}
+
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+	<script>
+		var score;
+		var xPos;
+		var t;
+		var yPos;
+
+		$(document).ready(function(){
+			$("#start_button").click(function(){
+				start();
+			});
+		});
+
+		function start() {
+			score = 0;
+			add_image();
+		}
+
+		function random_position_x() {
+			return Math.floor(Math.random()*300);
+		}
+
+		function random_position_y() {
+			return Math.floor(Math.random()*600);
+		}
+
+		function add_image() {
+			xPos = random_position_x();
+			yPos = random_position_y();
+			random_image = Math.floor(Math.random() * 8 + 1);
+			console.log(random_image);
+			var source = "resources/image-" + random_image + ".jpg";
+			var image = jQuery('<img src="'+source+'" style="width:50px; height:50px; border-radius:100%; position:absolute; top:'+xPos+'px; left:'+yPos+'px;" />').appendTo($("#game_space"));
+			image.one("click", () => {
+				increment_score();
+			});
+			var clear_image = setTimeout(function() {
+				image.remove();
+			}, 1000);
+ 			if(score === 10) {
+				clearTimeout(t);
+				t = null;
+			} else {
+				t = setTimeout(add_image, 1000);
+			}
+		}
+ 
+		function increment_score() {
+			score = score + 1;
+			$("#points").html(score);
+		}
+
+	</script>
+</head>
+<body>
+	<div class="no_points">
+		<p id="score_text"> Score: </p>
+		<p id="points"> 0 </p>
+	</div>
+	<button id="start_button" type="button"> START </button>
+	<div id="game_space"> </div>
+</body>
+</html>
