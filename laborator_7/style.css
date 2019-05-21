@@ -12,7 +12,7 @@ body {
 	padding-right: 50px;
 	padding-left: 50px;
 	padding-bottom: 34px;
-	font-size: 18px;
+	font-size: 14px;
 }
 
 #frm p {
@@ -26,4 +26,17 @@ body {
 	width: 75px;
 	margin-left: 75%;
 	margin-top: 10px;
+}
+
+.alert_box {
+	border-width: 1.5px;
+	border-style: solid;
+	border-color: #8F0021;
+	border-radius: 3px;
+	width: 100%;
+	font-size: 16px;
+	font-weight: bold;
+	background-color: rgb(196,104,104);
+	padding: 10px;
+	align-content: center;
 }
