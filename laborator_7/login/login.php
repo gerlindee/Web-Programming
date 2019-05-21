@@ -6,7 +6,30 @@
 </head>
 <body>
 	<div id="frm">
-		<form action="connection.php" method="POST">
+		<form action="process.php" method="POST">
+			<?php
+				if (@$_GET['Empty'] == true) {
+			?> 
+				<div class="alert_box">
+					<?php
+						echo @$_GET['Empty'];
+					?>
+				</div>
+			<?php
+				}
+			?>
+
+			<?php
+				if (@$_GET['Invalid'] == true) {
+			?> 
+				<div class="alert_box">
+					<?php
+						echo @$_GET['Invalid'];
+					?>
+				</div>
+			<?php
+				}
+			?>
 			<p>
 				<Label> Username: </Label>
 				<input type="text" id="user" name="username"/>
@@ -14,7 +37,7 @@
 			<p>
 				<Label> Password: </Label>
 				<input type="password" id="pass" name="password" />
-				<input type="submit" id="btn" value="Login" />
+				<input type="submit" name="Login" id="btn" value="Login" />
 			</p>
 		</form>
 	</div>
