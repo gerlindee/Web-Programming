@@ -125,3 +125,49 @@ table.links_table tfoot .links a{
   	padding: 2px 8px;
   	border-radius: 5px;
 }
+
+.edit_button {
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:8px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.edit_button:hover {
+	background-color:#5cbf2a;
+}
+.edit_button:active {
+	position:relative;
+	top:1px;
+}
+
+.delete_button {
+	background-color:#c74545;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #ab1919;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:8px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #662828;
+}
+.delete_button:hover {
+	background-color:#bd2a2a;
+}
+.delete_button:active {
+	position:relative;
+	top:1px;
+}
