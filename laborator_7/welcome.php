@@ -49,6 +49,11 @@
 							<td> <?php echo $row['address']; ?> </td>
 							<td> <?php echo $row['description']; ?> </td>
 							<td> <?php echo $row['category']; ?> </td>
+							<td> 
+								<a class="edit_button" href="index.php?edit=<?php echo $row['id']; ?>"> Edit </a>
+
+								<a href="table_process.php?delete=<?php echo $row['id']; ?>" class="delete_button"> Delete </a>
+							</td>
 						</tr>
 					<?php endwhile; ?>
 				</table>
