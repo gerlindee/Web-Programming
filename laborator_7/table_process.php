@@ -14,4 +14,14 @@
 
 		header("location:welcome.php");
 	}
+
+	if (isset($_GET['delete'])) {
+		$id = $_GET['delete'];
+
+		$query = "DELETE FROM links WHERE id = '$id'";
+
+		$result = mysqli_query($connection, $query);
+
+		header("location:welcome.php");
+	}
 ?>
