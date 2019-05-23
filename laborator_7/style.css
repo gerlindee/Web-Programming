@@ -68,6 +68,12 @@ body {
 	align-content: center;
 }
 
+.alert_success {
+  	padding: 20px;
+  	background-color: green;
+  	color: white;
+}
+
 table.links_table {
   	border: 0px solid #2BA461;
   	background-color: #EEEEEE;
