@@ -10,6 +10,30 @@
 		<head>
 			<title>URL Collection</title>
 			<link rel="stylesheet" type="text/css" href="style.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+			<script>
+				$(document).ready(function() {
+       				 $("#fetchval").on('change',function() {
+			            var keyword = $(this).val();
+			            $.ajax(
+			            {
+			                url:'fetch.php',
+			                type:'POST',
+			                data:'request='+keyword,
+			                
+			                beforeSend:function()
+			                {
+			                    $("#table-container").html('Working...');
+			                    
+			                },
+			                success:function(data)
+			                {
+			                    $("#table-container").html(data);
+			                },
+            			});
+        			});
+    			});
+			</script>
 		</head>
 
 		<body>
@@ -33,11 +57,23 @@
 					$connection = mysqli_connect('localhost', 'root', '', 'laborator_7');
 					$query = "SELECT * FROM links";
 					$result = mysqli_query($connection, $query);
+					$query_2 = "SELECT category FROM links GROUP BY category";
+					$categories = mysqli_query($connection, $query_2);
 				?>
 
+				<div class="links">
+					<p> Categories: </p>
+					<select id="fetchval" name="fetchby">
+						<option value="all"> All </option> 
+						<?php while ($row = $categories->fetch_assoc()): ?>
+							<option value="<?php echo $row['category'] ?>"> <?php echo $row['category'] ?> </option>
+						<?php endwhile; ?>
+					</select>
+				</div>
+
 				<div>
-					<table class="links_table">
-						<thead>
+					<table id="table-container" class="links_table">
+						<thead>	
 							<tr>
 								<th style="width: 400px"> Address </th>
 								<th style="width: 400px"> Description </th>
