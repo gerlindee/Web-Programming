@@ -7,6 +7,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="laborator_8" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="com.mysql.jdbc_5.1.5" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/com.mysql.jdbc_5.1.5.jar" />
+        </element>
       </element>
     </root>
   </artifact>

@@ -3,4 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>Controller.LoginController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/LoginController/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QuizController</servlet-name>
+        <servlet-class>Controller.QuizController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>QuizController</servlet-name>
+        <url-pattern>/QuizController/*</url-pattern>
+    </servlet-mapping>
 </web-app>
